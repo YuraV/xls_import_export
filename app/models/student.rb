@@ -8,11 +8,10 @@ class Student < ActiveRecord::Base
       spreadsheet = open_spreadsheet(file)
 
       header = spreadsheet.row(1)
-      (spreadsheet.first_row..spreadsheet.last_row).each do |i|
+      binding.pry
+      ((spreadsheet.first_row+1)..spreadsheet.last_row).each do |i|
         row = Hash[[header,spreadsheet.row(i)].transpose]
-
-        student = new
-        binding.pry
+        student = find_by_id(row["id"]) || new
         student.attributes = row.slice(*accessible_attributes)
         student.save!
       end
