@@ -40,6 +40,7 @@ gem 'thin'
 gem 'cancan'
 gem 'rolify'
 gem 'bourbon'
+gem 'roo'
 
 
 group :development do
