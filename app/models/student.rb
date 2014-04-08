@@ -23,12 +23,11 @@ class Student < ActiveRecord::Base
         end
 
         students << new(row.slice(*accessible_attributes))
-
-      end
       transaction do
         import students
       end
     end
+
 
     def upload_csv(files)
       students = []
