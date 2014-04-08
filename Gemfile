@@ -41,7 +41,8 @@ gem 'cancan'
 gem 'rolify'
 gem 'bourbon'
 gem 'roo'
-
+gem 'activerecord-import'
+gem 'spreadsheet'
 
 group :development do
   gem 'quiet_assets'

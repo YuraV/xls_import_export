@@ -23,6 +23,9 @@ GEM
       activesupport (= 3.2.16)
       arel (~> 3.0.2)
       tzinfo (~> 0.3.29)
+    activerecord-import (0.3.1)
+      activerecord (~> 3.0)
+      activerecord (~> 3.0)
     activeresource (3.2.16)
       activemodel (= 3.2.16)
       activesupport (= 3.2.16)
@@ -189,6 +192,7 @@ PLATFORMS
 
 DEPENDENCIES
   actionpack
+  activerecord-import
   bootstrap-sass (~> 2.3.2.1)
   bourbon
   cancan
@@ -210,6 +214,7 @@ DEPENDENCIES
   rspec (~> 2.14.1)
   sass-rails (~> 3.2.3)
   simple_form
+  spreadsheet
   thin
   uglifier (>= 1.0.3)
   underscore-rails

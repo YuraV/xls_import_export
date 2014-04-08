@@ -50,6 +50,7 @@ XlsImportExport::Application.routes.draw do
   # just remember to delete public/index.html.
   resources :students do
     post :import, on: :collection
+    post :find_files, on: :collection
   end
 
   root :to => 'students#index'

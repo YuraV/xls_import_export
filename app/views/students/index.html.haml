@@ -5,12 +5,14 @@
   = link_to "Excel", students_path(format: "xls")
 %table#students
   %tr
+    %th N#
     %th Initials
     %th Department
     %th Study Type
     %th Appointment
-  - @students.each do |student|
+  - @students.each_with_index do |student, i|
     %tr
+      %td= i+1
       %td= student.initials
       %td= student.department
       %td= student.study_type
@@ -21,3 +23,6 @@
 = form_tag import_students_path, multipart: true do
   = file_field_tag :file
   = submit_tag "Import"
+
+
+= link_to 'files', find_files_students_path, method: :post
