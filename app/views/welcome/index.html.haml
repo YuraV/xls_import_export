@@ -1,0 +1,8 @@
+%h1 Please select model in which you want to upload your data
+%p
+  %ul
+    - map_all_model_class_names.each do |m|
+      %li
+        =link_to m.classify, "#{m.downcase.pluralize}"
+
+

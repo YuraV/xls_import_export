@@ -9,8 +9,13 @@ class StudentsController < ApplicationController
   end
 
   def import
-    Student.upload(params[:file])
-    redirect_to root_url, notice: 'Students Imported.'
+    if params[:file]
+      Student.upload(params[:file])
+    else
+      false
+    end
+
+    redirect_to students_path, notice: 'Students Imported.'
   end
 
   def find_files

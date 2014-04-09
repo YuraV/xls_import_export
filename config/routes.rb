@@ -53,7 +53,11 @@ XlsImportExport::Application.routes.draw do
     post :find_files, on: :collection
   end
 
-  root :to => 'students#index'
+  resources :people do
+    post :import, on: :collection
+  end
+
+  root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 
