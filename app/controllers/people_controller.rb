@@ -12,7 +12,8 @@ class PeopleController < ApplicationController
     if params[:file]
       Person.upload(params[:file])
     else
-      false
+      @files = Dir.glob('public/excel/person/*')
+      Person.upload(@files)
     end
 
     redirect_to people_path, notice: 'Students Imported.'

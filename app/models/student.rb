@@ -23,7 +23,5 @@ class Student < ActiveRecord::Base
     #  end
     #end
 
-    def open_ro_csv(file)
-      Roo::CSV.new(file)
-    end
+
 end
