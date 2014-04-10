@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   def index
-    @students = Student.order(:initials)
+    @students = Student.all
     respond_to do |format|
       format.html
       format.csv {send_data @students.to_csv}

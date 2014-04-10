@@ -7,6 +7,7 @@ class UploaderService
       header ||= spreadsheet.row(1)
       (2..spreadsheet.last_row).each do |i|
         row = Hash[[header,spreadsheet.row(i)].transpose]
+        row.values.collect {|value| value.strip! if value.respond_to? :strip!}
         row.delete_if {|key, value| key.blank?}
         #binding.pry
         students << klass.new(row.slice(*klass.accessible_attributes))

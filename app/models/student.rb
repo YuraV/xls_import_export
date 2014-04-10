@@ -1,20 +1,10 @@
 class Student < ActiveRecord::Base
-  attr_accessible :initials, :department, :study_type, :appointment
+  attr_accessible :initials, :department, :study_type, :appointment, :person_id
+  has_one :person
 
-    def self.upload(file)
-      #students = []
-      #spreadsheet = open_with_ro(file)
-      #@header ||= spreadsheet.row(1)
-      #(2..spreadsheet.last_row).each do |i|
-      #  row = Hash[[@header,spreadsheet.row(i)].transpose]
-      #  row.delete_if {|key, value| key.blank?}
-      #  students << new(row.slice(*accessible_attributes))
-      #  end
-      #transaction do
-      #  import students
-      #end
-      UploaderService.upload_file(self, file)
-    end
+  def self.upload(file)
+    UploaderService.upload_file(self, file)
+  end
 
 
     #def upload_csv(files)
@@ -32,6 +22,7 @@ class Student < ActiveRecord::Base
     #    import students
     #  end
     #end
+
     def open_ro_csv(file)
       Roo::CSV.new(file)
     end
