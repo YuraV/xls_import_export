@@ -21,7 +21,7 @@ class UploaderService
     def open_with_ro(file)
 
       #cut = file.original_filename.gsub(/\.[^.]+\z/, '')
-      case File.extname(base_file_name(file))
+      case File.extname(file.original_filename)
         when ".csv" then Roo::Csv.new(file.path)
         when ".xls" then Roo::Excel.new(file.path, nil, :ignore)
         when ".xlsx" then Roo::Excelx.new(file.path, nil, :ignore)
@@ -29,14 +29,14 @@ class UploaderService
       end
     end
 
-    def base_file_name(file)
-      name = if file.class == Array
-                File.basename(file[0])
-             else
-                file.original_filename
-             end
-      name
-    end
+    # def base_file_name(file)
+    #   name = if file.class == Array
+    #             File.basename(file[0])
+    #          else
+    #             file.original_filename
+    #          end
+    #   name
+    # end
     def base_file_path
 
     end

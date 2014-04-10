@@ -1,4 +1,4 @@
-namespace :bind do
+namespace :bind_student_with_person do
 
   desc "Bind Person To Student"
   # task :bind_student_with_person => :environment do
