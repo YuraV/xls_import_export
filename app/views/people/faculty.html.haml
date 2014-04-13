@@ -2,7 +2,8 @@
 %table#people.bordered.zebra
   %tr
     %th N#
-    %th Initials
+    - if Faculty.column_names.include? :initials
+      %th Initials
     %th Kvalifikaciya
     %th Nazva
     %th Specialnist
@@ -10,7 +11,8 @@
   - @faculty.each_with_index do |person, i|
     %tr
       %td= i+1
-      %td= person.initials
+      - if Faculty.column_names.include? :initials
+        %th Initials
       %td= person.kvalifikaciya
       %td= person.faculty_name
       %td= person.specialnist

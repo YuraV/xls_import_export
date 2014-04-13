@@ -2,13 +2,15 @@
 %table#people.bordered.zebra
   %tr
     %th N#
-    %th Initials
+    - if FormOfEducation.column_names.include? :initials
+      %th Initials
     %th Education Form
     %th Person ID
   - @form_of_education.each_with_index do |person, i|
     %tr
       %td= i+1
-      %td= person.initials
+      - if FormOfEducation.column_names.include? :initials
+        %td=person.initials
       %td= person.education_form
       %td= person.person_id
 
