@@ -1,0 +1,16 @@
+= render 'shared/welcome'
+%table#people.bordered.zebra
+  %tr
+    %th N#
+    %th Initials
+    %th Nakaz
+    %th Person Id
+  - @rector.each_with_index do |person, i|
+    %tr
+      %td= i+1
+      %td= person.initials
+      %td= person.nakaz
+      %td= person.person_id
+
+
+

@@ -1,0 +1,20 @@
+= render 'shared/welcome'
+%table#people.bordered.zebra
+  %tr
+    %th N#
+    %th Initials
+    %th Kvalifikaciya
+    %th Nazva
+    %th Specialnist
+    %th Person ID
+  - @faculty.each_with_index do |person, i|
+    %tr
+      %td= i+1
+      %td= person.initials
+      %td= person.kvalifikaciya
+      %td= person.faculty_name
+      %td= person.specialnist
+      %td= person.person_id
+
+
+

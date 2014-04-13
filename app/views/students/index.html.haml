@@ -5,7 +5,7 @@
 %table#students
   %tr
     %th N#
-    %th Initials
+    -#%th Initials
     %th Department
     %th Study Type
     %th Appointment
@@ -13,7 +13,7 @@
   - @students.each_with_index do |student, i|
     %tr
       %td= i+1
-      %td= student.initials
+      -#%td= student.try(:initials)
       %td= student.department
       %td= student.study_type
       %td= student.appointment
@@ -24,4 +24,4 @@
 = render 'shared/form', route: import_students_path
 
 
-= link_to 'files', find_files_students_path, method: :post
+-#= link_to 'files', find_files_students_path, method: :post

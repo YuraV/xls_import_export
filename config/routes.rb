@@ -53,8 +53,19 @@ XlsImportExport::Application.routes.draw do
     post :find_files, on: :collection
   end
 
+  resources :welcome do
+    post :bind_records, on: :collection
+    post :remove_columns, on: :collection
+  end
+
   resources :people do
-    post :import, on: :collection
+    collection do
+      post :import
+      get  :person_all
+      get  :faculty
+      get  :rector
+      get  :education_form
+    end
   end
 
   root :to => 'welcome#index'

@@ -1,11 +1,26 @@
 class PeopleController < ApplicationController
   def index
-    @people = Person.all
     respond_to do |format|
       format.html
       format.csv {send_data @students.to_csv}
       #format.xls
     end
+  end
+
+  def person_all
+    @people = Person.all
+  end
+
+  def faculty
+    @faculty = Faculty.all
+  end
+
+  def rector
+    @rector = RectorAppointment.all
+  end
+
+  def education_form
+    @form_of_education = FormOfEducation.all
   end
 
   def import

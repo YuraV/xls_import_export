@@ -1,21 +1,30 @@
 class UploaderService
   class << self
 
-    def upload_file(klass, file)
-      students = []
+    def upload_file(file)
+      # students = []
+      people = []
+      rektor = []
+      education = []
+      faculty = []
       spreadsheet = open_with_ro(file)
       header ||= spreadsheet.row(1)
       (2..spreadsheet.last_row).each do |i|
         row = Hash[[header,spreadsheet.row(i)].transpose]
         row.values.collect {|value| value.strip! if value.respond_to? :strip!}
         row.delete_if {|key, value| key.blank?}
-        #binding.pry
-        students << klass.new(row.slice(*klass.accessible_attributes))
+        # students << Student.new(row.slice(*Student.accessible_attributes))
+        people << Person.new(row.slice(*Person.accessible_attributes))
+        rektor << RectorAppointment.new(row.slice(*RectorAppointment.accessible_attributes))
+        education << FormOfEducation.new(row.slice(*FormOfEducation.accessible_attributes))
+        faculty << Faculty.new(row.slice(*Faculty.accessible_attributes))
         #binding.pry
       end
-      klass.transaction do
-        klass.import students
-      end
+        Person.import people
+        RectorAppointment.import rektor
+        FormOfEducation.import education
+        Faculty.import faculty
+
     end
 
     def open_with_ro(file)

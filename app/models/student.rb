@@ -1,6 +1,5 @@
 class Student < ActiveRecord::Base
   attr_accessible :initials, :department, :study_type, :appointment, :person_id
-  has_one :person
 
   def self.upload(file)
     UploaderService.upload_file(self, file)
