@@ -7,6 +7,14 @@ class PeopleController < ApplicationController
     end
   end
 
+  def delete_all
+    Person.delete_all
+    Faculty.delete_all
+    RectorAppointment.delete_all
+    FormOfEducation.delete_all
+    redirect_to root_path
+  end
+
   def view_tables
     respond_to :html
   end

@@ -66,6 +66,7 @@ XlsImportExport::Application.routes.draw do
       get  :rector
       get  :education_form
       get  :view_tables
+      post :delete_all
     end
   end
 
