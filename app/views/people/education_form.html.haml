@@ -6,6 +6,7 @@
     %th Person ID
   - @form_of_education.each_with_index do |person, i|
     %tr
-      %td= i+1
+      %td= person.id
       %td= person.education_form
       %td= person.person_id
+= will_paginate @form_of_education

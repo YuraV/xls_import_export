@@ -37,17 +37,5 @@ class UploaderService
         else raise "Unknown file type: #{file.original_filename}"
       end
     end
-
-    # def base_file_name(file)
-    #   name = if file.class == Array
-    #             File.basename(file[0])
-    #          else
-    #             file.original_filename
-    #          end
-    #   name
-    # end
-    def base_file_path
-
-    end
   end
 end

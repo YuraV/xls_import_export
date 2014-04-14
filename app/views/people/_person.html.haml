@@ -5,8 +5,8 @@
     %th Initials
   - @people.each_with_index do |person, i|
     %tr
-      %td= i+1
-      %th=person.initials
-
+      %td= person.id
+      %td=person.initials
+= will_paginate @people
 
 

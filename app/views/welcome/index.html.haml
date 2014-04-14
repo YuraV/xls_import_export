@@ -1,13 +1,13 @@
--#%h1 Please select model in which you want to upload your data
+%h1 Please Select Desired Action From Top Menu
 -#%p
 -#  %ul
 -#    - map_all_model_class_names.each do |m|
 -#      %li
 -#        =link_to m.classify, "#{m.downcase.pluralize}"
-
-%p
-  = link_to "upload file", people_path
-%p
-  = link_to "Bind Records", bind_records_welcome_index_path, method: :post
-%p
-  = link_to "Remove Columns", remove_columns_welcome_index_path, method: :post
+-#
+-#%p
+-#  = link_to "upload file", people_path
+-#%p
+-#  = link_to "Bind Records", bind_records_welcome_index_path, method: :post
+-#%p
+-#  = link_to "Remove Columns", remove_columns_welcome_index_path, method: :post

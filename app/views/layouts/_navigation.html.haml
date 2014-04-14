@@ -1,0 +1,11 @@
+= link_to "XLS IMPORT EXPORT", root_path, :class => 'brand'
+%ul.nav.pull-right
+  %li
+    = link_to "Upload file", people_path
+  %li
+    = link_to "View Tables", view_tables_people_path, method: :get
+  %li
+    = link_to "Bind Records", bind_records_welcome_index_path, method: :post
+  %li
+    = link_to "Remove Columns", remove_columns_welcome_index_path, method: :post
+%ul.nav.pull-left

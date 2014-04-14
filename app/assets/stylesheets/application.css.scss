@@ -11,6 +11,27 @@
  *= require_self
  *= require_tree .
  */
+
+@import 'bootstrap';
+
+body {
+  padding-top: 55px;
+}
+
+.content {
+  background-color: #eee;
+  padding: 20px;
+  table thead th {
+    vertical-align: middle;
+    background-color: #f0f0f0;
+  }
+}
+
+.center_in_row {
+  display: table;
+  margin-right: auto;
+  margin-left: auto;
+}
 .bordered {
   border: solid #ccc 1px;
   -moz-border-radius: 6px;
