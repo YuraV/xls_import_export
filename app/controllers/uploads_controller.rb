@@ -50,6 +50,11 @@ class UploadsController < ApplicationController
                                  :per_page => 15)
   end
 
+  def join_table
+    @join_table = JoinTable.paginate(:page => params[:page],
+                                     :per_page => 15)
+  end
+
   def delete_all
     Person.delete_all
     Faculty.delete_all

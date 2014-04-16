@@ -1,0 +1,18 @@
+= render 'shared/welcome'
+%h2 Table For JoinTable
+%table#people.bordered.zebra
+  %tr
+    %th N#
+    - if @join_table.first.initials.present?
+      %th Initials
+    %th Appointment
+    %th qualification
+  - @join_table.each_with_index do |person, i|
+    %tr
+      %td= person.id
+      %td= person.initials
+      %td= person.appointment
+      %td= person.qualification
+= will_paginate @join_table
+
+

@@ -8,6 +8,7 @@ namespace :bind_student_with_person do
   #   end
 
   # end
+  # s.each {|s| a << JoinTable.new(s.attributes.slice(*JoinTable.accessible_attributes))}
 
   desc "bind"
   task :bind_student_with_person => :environment do

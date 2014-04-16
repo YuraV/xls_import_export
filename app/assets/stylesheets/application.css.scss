@@ -18,6 +18,15 @@ body {
   padding-top: 55px;
 }
 
+.container {
+  width: auto;
+  display: table;
+}
+
+.row {
+  margin: 0px;
+}
+
 .content {
   background-color: #eee;
   padding: 20px;
