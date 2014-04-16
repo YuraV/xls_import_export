@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20140416114455) do
     t.string   "initials"
     t.string   "qualification"
     t.string   "appointment"
+    t.integer  "person_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end

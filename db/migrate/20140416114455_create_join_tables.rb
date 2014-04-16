@@ -4,6 +4,7 @@ class CreateJoinTables < ActiveRecord::Migration
       t.string :initials
       t.string :qualification
       t.string :appointment
+      t.integer :person_id
 
       t.timestamps
     end
