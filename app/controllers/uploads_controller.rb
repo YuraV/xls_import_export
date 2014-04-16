@@ -10,7 +10,6 @@ class UploadsController < ApplicationController
     else
       flash[:notice] = "Please Select Some File"
       # @files = Dir.glob('public/excel/person/*')
-      # Person.upload(@files)
     end
     redirect_to root_path, notice: 'Students Imported.'
   end
