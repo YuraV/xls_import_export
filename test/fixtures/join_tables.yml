@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  initials: MyString
+  qualification: MyString
+  appointment: MyString
+
+two:
+  initials: MyString
+  qualification: MyString
+  appointment: MyString
