@@ -1,6 +1,6 @@
 class UploadsController < ApplicationController
   def index
-    @models = ModelsService.get_models
+    @models = ModelsService.prepare_models_for_select
     respond_to :html
   end
 
@@ -55,12 +55,8 @@ class UploadsController < ApplicationController
   end
 
   def delete_all
-    Person.delete_all
-    Faculty.delete_all
-    RectorAppointment.delete_all
-    FormOfEducation.delete_all
-    Student.delete_all
-    GraduatedStudent.delete_all
+    ModelsService.models_delete_all
+    flash[:notice] = "All Tables Have Been Cleaned"
     redirect_to root_path
   end
 end
