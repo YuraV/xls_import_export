@@ -1,7 +1,6 @@
 class UploadsController < ApplicationController
-
   def index
-    @models = [[GraduatedStudent, GraduatedStudent], [Student,Student]]
+    @models = ModelsService.get_models
     respond_to :html
   end
 

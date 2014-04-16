@@ -3,8 +3,7 @@
 %table#people.bordered.zebra
   %tr
     %th N#
-    - if @students.first.initials.present?
-      %th Initials
+    %th Initials
     %th Department
     %th Faculty_name
     %th Appointment
@@ -12,7 +11,7 @@
   - @students.each_with_index do |person, i|
     %tr
       %td= person.id
-      %td= person.initials
+      %td= person.initials if person.initials
       %td= person.department
       %td= person.faculty_name
       %td= person.appointment

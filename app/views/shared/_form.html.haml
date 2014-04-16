@@ -1,5 +1,7 @@
 
 = form_tag route,  multipart: true do
+  = label_tag :klass, "Select Table to be populated"
   = select_tag :klass, options_for_select(@models)
+  = label_tag :file, "Choice file to be uploaded"
   = file_field_tag :file
-  = submit_tag "Import"
+  = submit_tag "Upload"

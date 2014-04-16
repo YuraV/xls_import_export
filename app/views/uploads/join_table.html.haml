@@ -3,8 +3,7 @@
 %table#people.bordered.zebra
   %tr
     %th N#
-    - if @join_table.first.initials.present?
-      %th Initials
+    %th Initials
     %th Appointment
     %th qualification
   - @join_table.each_with_index do |person, i|
