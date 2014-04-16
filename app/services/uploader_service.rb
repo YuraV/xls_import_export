@@ -2,7 +2,7 @@ class UploaderService
   class << self
 
     def upload_file(file)
-      # students = []
+      students = []
       people = []
       rektor = []
       education = []
@@ -18,12 +18,17 @@ class UploaderService
         rektor << RectorAppointment.new(row.slice(*RectorAppointment.accessible_attributes))
         education << FormOfEducation.new(row.slice(*FormOfEducation.accessible_attributes))
         faculty << Faculty.new(row.slice(*Faculty.accessible_attributes))
+        students << Student.new(row.slice(*Student.accessible_attributes))
+        # binding.pry
         #binding.pry
       end
-        Person.import people
-        RectorAppointment.import rektor
-        FormOfEducation.import education
-        Faculty.import faculty
+      Student.import students
+      Person.import people
+      RectorAppointment.import rektor
+      FormOfEducation.import education
+      Faculty.import faculty
+
+        # Student.import students
 
     end
 

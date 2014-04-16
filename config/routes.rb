@@ -57,8 +57,7 @@ XlsImportExport::Application.routes.draw do
     post :bind_records, on: :collection
     post :remove_columns, on: :collection
   end
-
-  resources :people do
+  resources :uploads do
     collection do
       post :import
       get  :person_all
@@ -68,6 +67,8 @@ XlsImportExport::Application.routes.draw do
       get  :view_tables
       post :delete_all
     end
+  end
+  resources :people do
   end
 
   root :to => 'welcome#index'
