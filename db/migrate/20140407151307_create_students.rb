@@ -3,7 +3,7 @@ class CreateStudents < ActiveRecord::Migration
     create_table :students do |t|
       t.string  :initials
       t.string  :department
-      t.string  :study_type
+      t.string  :faculty_name
       t.string  :appointment
       t.integer :person_id
       t.timestamps

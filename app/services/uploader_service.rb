@@ -1,7 +1,9 @@
 class UploaderService
   class << self
-
-    def upload_file(klass, file)
+    def upload_file(params = {})
+      klass = params[:klass]
+      file = params[:file]
+      klass = klass.constantize
       records = []
       spreadsheet = open_with_ro(file)
       header ||= spreadsheet.row(1)

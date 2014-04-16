@@ -61,6 +61,8 @@ XlsImportExport::Application.routes.draw do
     collection do
       post :import
       get  :person_all
+      get  :students_table
+      get  :graduated_students_table
       get  :faculty
       get  :rector
       get  :education_form

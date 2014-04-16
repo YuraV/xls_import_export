@@ -1,5 +1,5 @@
 
-
 = form_tag route,  multipart: true do
+  = select_tag :klass, options_for_select(@models)
   = file_field_tag :file
   = submit_tag "Import"
