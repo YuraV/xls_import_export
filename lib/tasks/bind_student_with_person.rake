@@ -6,7 +6,7 @@ namespace :bind_student_with_person do
   #   s.each do |a|
   #     a.save
   #   end
-  # ss = GraduatedStudent.select("graduated_students.*, students.id as person_id").joins("JOIN students on graduated_students.initials = students.initials")^C
+  # ss = GraduatedStudent.select("graduated_students.*, students.id as person_id").joins("JOIN students on graduated_students.initials = students.initials")
 
   # end
   # s.each {|s| a << JoinTable.new(s.attributes.slice(*JoinTable.accessible_attributes))}
