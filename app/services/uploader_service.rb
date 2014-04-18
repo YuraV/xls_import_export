@@ -6,14 +6,27 @@ class UploaderService
       klass = klass.constantize
       records = []
       spreadsheet = open_with_ro(file)
-      header ||= spreadsheet.row(1)
       (2..spreadsheet.last_row).each do |i|
-        row = Hash[[header,spreadsheet.row(i)].transpose]
-        row.values.collect {|value| value.strip! if value.respond_to? :strip!}
-        row.delete_if {|key, value| key.blank?}
+        binding.pry
+        row = Hash[[header(spreadsheet),spreadsheet.row(i)].transpose]
+        strip_values(row)
+        clean_empty_keys(row)
         records << klass.new(row.slice(*klass.accessible_attributes))
       end
       klass.import records
+    end
+
+    def header(spreadsheet)
+      header ||= spreadsheet.row(1)
+      header
+    end
+
+    def strip_values(hash)
+      hash.values.collect {|value| value.strip! if value.respond_to? :strip!}
+    end
+
+    def clean_empty_keys(hash)
+      hash.delete_if {|key,value| key.blank?}
     end
 
     def open_with_ro(file)

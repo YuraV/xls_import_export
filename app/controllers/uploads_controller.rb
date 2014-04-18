@@ -1,4 +1,5 @@
 class UploadsController < ApplicationController
+
   def index
     @models = ModelsService.prepare_models_for_select
     respond_to :html
@@ -7,11 +8,10 @@ class UploadsController < ApplicationController
   def import
     if params[:file]
       UploaderService.upload_file(params)
+      redirect_to root_path, notice: 'Students Imported.'
     else
-      flash[:notice] = "Please Select Some File"
-      # @files = Dir.glob('public/excel/person/*')
+      redirect_to uploads_path, alert: "Please Select Some File"
     end
-    redirect_to root_path, notice: 'Students Imported.'
   end
 
   def view_tables
