@@ -55,7 +55,6 @@ class UploadsController < ApplicationController
 
   def delete_all
     ModelsService.models_delete_all
-    flash[:notice] = "All Tables Have Been Cleaned"
-    redirect_to root_path
+    redirect_to root_path, notice: "All Tables Have Been Cleaned"
   end
 end

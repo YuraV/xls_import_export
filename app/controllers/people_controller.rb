@@ -6,12 +6,4 @@ class PeopleController < ApplicationController
       #format.xls
     end
   end
-
-
-
-
-
-
-
-
 end

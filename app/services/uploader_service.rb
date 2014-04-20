@@ -7,7 +7,6 @@ class UploaderService
       records = []
       spreadsheet = open_with_ro(file)
       (2..spreadsheet.last_row).each do |i|
-        binding.pry
         row = Hash[[header(spreadsheet),spreadsheet.row(i)].transpose]
         strip_values(row)
         clean_empty_keys(row)
