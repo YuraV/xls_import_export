@@ -17,5 +17,10 @@ class ModelsService
     def constantize_models_name(model)
       model.constantize
     end
+
+    def model_delete_all(mode)
+      model.delete_all
+    end
+
   end
 end

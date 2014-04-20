@@ -7,7 +7,6 @@
     %th Department
     %th Faculty_name
     %th Appointment
-    %th Person Id
   - @students.each_with_index do |person, i|
     %tr
       %td= person.id
@@ -15,7 +14,6 @@
       %td= person.department
       %td= person.faculty_name
       %td= person.appointment
-      %td= person.person_id
 = will_paginate @students
 
 
