@@ -14,7 +14,6 @@
 ActiveRecord::Schema.define(:version => 20140416114455) do
 
   create_table "faculties", :force => true do |t|
-    t.string   "initials"
     t.string   "faculty_name"
     t.string   "specialnist"
     t.string   "kvalifikaciya"
@@ -24,7 +23,6 @@ ActiveRecord::Schema.define(:version => 20140416114455) do
   end
 
   create_table "form_of_educations", :force => true do |t|
-    t.string   "initials"
     t.string   "education_form"
     t.string   "person_id"
     t.datetime "created_at",     :null => false
@@ -60,7 +58,6 @@ ActiveRecord::Schema.define(:version => 20140416114455) do
   end
 
   create_table "rector_appointments", :force => true do |t|
-    t.string   "initials"
     t.string   "nakaz"
     t.string   "person_id"
     t.datetime "created_at", :null => false
@@ -70,11 +67,11 @@ ActiveRecord::Schema.define(:version => 20140416114455) do
   create_table "students", :force => true do |t|
     t.string   "initials"
     t.string   "department"
-    t.string   "faculty_name"
+    t.string   "study_type"
     t.string   "appointment"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.integer  "person_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
   end
 
 end

@@ -11,7 +11,11 @@ class ModelsService
     end
 
     def models_delete_all
-      get_models.collect {|m| m.constantize.delete_all}
+      get_models.collect {|m| constantize_models_name(m).delete_all}
+    end
+
+    def constantize_models_name(model)
+      model.constantize
     end
   end
 end

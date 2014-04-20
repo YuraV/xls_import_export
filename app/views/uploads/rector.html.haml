@@ -2,15 +2,13 @@
 %table#people.bordered.zebra
   %tr
     %th N#
-    - if @rector.first.initials.present?
-      %th Initials
+    %th Initials
     %th Nakaz
     %th Person Id
   - @rector.each_with_index do |person, i|
     %tr
       %td= person.id
-      - if @rector.first.initials.present?
-        %td= person.initials
+      %td= person.initials
       %td= person.nakaz
       %td= person.person_id
 = will_paginate @rector
