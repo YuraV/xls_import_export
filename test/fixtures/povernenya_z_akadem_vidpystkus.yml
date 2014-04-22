@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  initials: MyString
+  faculty: MyString
+  kyrs: MyString
+  z_jakogo_chusla_dopysheno_do_zanyat: MyString
+  y_zvyazky_z_chum_dopysheno_do_zanyat: MyString
+  nomer_i_data_nakazy: MyString
+
+two:
+  initials: MyString
+  faculty: MyString
+  kyrs: MyString
+  z_jakogo_chusla_dopysheno_do_zanyat: MyString
+  y_zvyazky_z_chum_dopysheno_do_zanyat: MyString
+  nomer_i_data_nakazy: MyString

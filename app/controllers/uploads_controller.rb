@@ -18,26 +18,6 @@ class UploadsController < ApplicationController
     respond_to :html
   end
 
-  def person_all
-    @people = Person.paginate(:page => params[:page],
-                              :per_page => 15)
-  end
-
-  def faculty
-    @faculty = Faculty.paginate(:page => params[:page],
-                                :per_page => 15)
-  end
-
-  def rector
-    @rector = RectorAppointment.paginate(:page => params[:page],
-                                         :per_page => 15)
-  end
-
-  def education_form
-    @form_of_education = FormOfEducation.paginate(:page => params[:page],
-                                                  :per_page => 15)
-  end
-
   def students_table
     @students = Student.paginate(:page => params[:page],
                                  :per_page => 15)
@@ -57,4 +37,9 @@ class UploadsController < ApplicationController
     ModelsService.models_delete_all
     redirect_to root_path, notice: "All Tables Have Been Cleaned"
   end
+
+  def create_model
+    UploaderService.create_table_method
+  end
+
 end

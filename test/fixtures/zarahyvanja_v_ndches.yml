@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  initials: MyString
+  posada_na_chas_zarah: MyString
+  posada_na_jaky_zarah: MyString
+  tema_na_jaky_zarah: MyString
+  symisnuctvo: MyString
+  stavka: MyString
+  zarahyvanja_z: MyString
+  zarahyvanja_do: MyString
+  posadovyi: MyString
+  yklad: MyString
+  nakaz_rektora: MyString
+
+two:
+  initials: MyString
+  posada_na_chas_zarah: MyString
+  posada_na_jaky_zarah: MyString
+  tema_na_jaky_zarah: MyString
+  symisnuctvo: MyString
+  stavka: MyString
+  zarahyvanja_z: MyString
+  zarahyvanja_do: MyString
+  posadovyi: MyString
+  yklad: MyString
+  nakaz_rektora: MyString

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  initials: MyString
+  faculty: MyString
+  specialnist: MyString
+  study_type: MyString
+  after_diploma_institute: MyString
+  institude_of_qualification_improvment: MyString
+  nakaz_rektora: MyString
+
+two:
+  initials: MyString
+  faculty: MyString
+  specialnist: MyString
+  study_type: MyString
+  after_diploma_institute: MyString
+  institude_of_qualification_improvment: MyString
+  nakaz_rektora: MyString

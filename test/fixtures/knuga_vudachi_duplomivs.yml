@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  initials: MyString
+  rik_vstypy: MyString
+  rik_vupysky: MyString
+  faculty: MyString
+  specialnist: MyString
+  kvalifikacia: MyString
+  forma_navchanya: MyString
+  vidznaka: MyString
+  serija_ta_nomer_duplomy: MyString
+  vudano: MyString
+  protokol_dekanaty_vid: MyString
+
+two:
+  initials: MyString
+  rik_vstypy: MyString
+  rik_vupysky: MyString
+  faculty: MyString
+  specialnist: MyString
+  kvalifikacia: MyString
+  forma_navchanya: MyString
+  vidznaka: MyString
+  serija_ta_nomer_duplomy: MyString
+  vudano: MyString
+  protokol_dekanaty_vid: MyString

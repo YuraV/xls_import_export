@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  initials: MyString
+  faculty: MyString
+  kyrs: MyString
+  study_type: MyString
+  pruchuna_akadem_vidpystku: MyString
+  data_pochatky_akadem_vidpystku: MyString
+  data_zavershenja_akadem_vidpystku: MyString
+  nomer_data_nakazy: MyString
+
+two:
+  initials: MyString
+  faculty: MyString
+  kyrs: MyString
+  study_type: MyString
+  pruchuna_akadem_vidpystku: MyString
+  data_pochatky_akadem_vidpystku: MyString
+  data_zavershenja_akadem_vidpystku: MyString
+  nomer_data_nakazy: MyString

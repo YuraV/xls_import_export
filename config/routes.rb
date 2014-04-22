@@ -69,7 +69,7 @@ XlsImportExport::Application.routes.draw do
       get  :education_form
       get  :view_tables
       post :delete_all
-      post :model_delete_all
+      post :create_model
     end
   end
   resources :people do
