@@ -4,22 +4,22 @@
   %tr
     %th N#
     %th Initials
-    %th Department
+    %th specialnist
     %th Faculty_name
     %th study_type
     %th qualification
-    %th Appointment
+    %th nakaz_rektora
     %th search_archive_data
     %th Person Id
   - @graduated_students.each_with_index do |person, i|
     %tr
       %td= person.id
       %td= person.initials
-      %td= person.department
+      %td= person.specialnist
       %td= person.faculty_name
       %td= person.study_type
       %td= person.qualification
-      %td= person.appointment
+      %td= person.nakaz_rektora
       %td= person.search_archive_data
       %td= person.person_id
 = will_paginate @graduated_students

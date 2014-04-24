@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(:version => 20140416114455) do
     t.string   "initials"
     t.string   "faculty_name"
     t.string   "specialnist"
-    t.string   "kvalifikaciya"
+    t.string   "qualification"
     t.string   "person_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
@@ -25,19 +25,19 @@ ActiveRecord::Schema.define(:version => 20140416114455) do
 
   create_table "form_of_educations", :force => true do |t|
     t.string   "initials"
-    t.string   "education_form"
+    t.string   "study_type"
     t.string   "person_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "graduated_students", :force => true do |t|
     t.string   "initials"
     t.string   "faculty_name"
     t.string   "study_type"
-    t.string   "department"
+    t.string   "specialnist"
     t.string   "qualification"
-    t.string   "appointment"
+    t.string   "nakaz_rektora"
     t.string   "search_archive_data"
     t.string   "person_id"
     t.datetime "created_at",          :null => false
@@ -46,8 +46,8 @@ ActiveRecord::Schema.define(:version => 20140416114455) do
 
   create_table "join_tables", :force => true do |t|
     t.string   "initials"
-    t.string   "qualification"
-    t.string   "appointment"
+    t.string   "specialnist"
+    t.string   "nakaz_rektora"
     t.integer  "person_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
@@ -61,20 +61,20 @@ ActiveRecord::Schema.define(:version => 20140416114455) do
 
   create_table "rector_appointments", :force => true do |t|
     t.string   "initials"
-    t.string   "nakaz"
+    t.string   "nakaz_rektora"
     t.string   "person_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "students", :force => true do |t|
     t.string   "initials"
-    t.string   "department"
+    t.string   "study_type"
     t.string   "faculty_name"
-    t.string   "appointment"
+    t.string   "nakaz_rektora"
     t.integer  "person_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
 end

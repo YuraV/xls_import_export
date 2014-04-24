@@ -4,16 +4,16 @@
   %tr
     %th N#
     %th Initials
-    %th Department
+    %th Study_Type
     %th Faculty_name
-    %th Appointment
+    %th Nakaz_rektora
   - @students.each_with_index do |person, i|
     %tr
       %td= person.id
       %td= person.initials if person.initials
-      %td= person.department
+      %td= person.study_type
       %td= person.faculty_name
-      %td= person.appointment
+      %td= person.nakaz_rektora
 = will_paginate @students
 
 

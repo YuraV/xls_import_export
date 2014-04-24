@@ -4,7 +4,7 @@ class CreateFaculties < ActiveRecord::Migration
       t.string :initials
       t.string :faculty_name
       t.string :specialnist
-      t.string :kvalifikaciya
+      t.string :qualification
       t.string :person_id
 
       t.timestamps

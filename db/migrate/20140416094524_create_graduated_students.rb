@@ -4,9 +4,9 @@ class CreateGraduatedStudents < ActiveRecord::Migration
       t.string :initials
       t.string :faculty_name
       t.string :study_type
-      t.string :department
+      t.string :specialnist
       t.string :qualification
-      t.string :appointment
+      t.string :nakaz_rektora
       t.string :search_archive_data
       t.string :person_id
 
