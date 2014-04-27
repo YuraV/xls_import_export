@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  initials: MyString
+  faculty_name: MyString
+  study_type: MyString
+  nakaz_rektora: MyString
+
+two:
+  initials: MyString
+  faculty_name: MyString
+  study_type: MyString
+  nakaz_rektora: MyString

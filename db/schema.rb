@@ -11,70 +11,42 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140416114455) do
+ActiveRecord::Schema.define(:version => 20140426232615) do
 
-  create_table "faculties", :force => true do |t|
+  create_table "enroled_students", :force => true do |t|
     t.string   "initials"
     t.string   "faculty_name"
-    t.string   "specialnist"
-    t.string   "qualification"
-    t.string   "person_id"
+    t.string   "study_type"
+    t.string   "nakaz_rektora"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
 
-  create_table "form_of_educations", :force => true do |t|
-    t.string   "initials"
-    t.string   "study_type"
-    t.string   "person_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "graduated_students", :force => true do |t|
+  create_table "exclusions", :force => true do |t|
     t.string   "initials"
     t.string   "faculty_name"
+    t.string   "kyrs"
     t.string   "study_type"
-    t.string   "specialnist"
-    t.string   "qualification"
+    t.string   "exclusion_reason"
+    t.string   "exclusion_date"
     t.string   "nakaz_rektora"
-    t.string   "search_archive_data"
-    t.string   "person_id"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
-  end
-
-  create_table "join_tables", :force => true do |t|
-    t.string   "initials"
-    t.string   "specialnist"
-    t.string   "nakaz_rektora"
-    t.integer  "person_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.integer  "student_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "people", :force => true do |t|
     t.string   "initials"
+    t.string   "person_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  create_table "rector_appointments", :force => true do |t|
-    t.string   "initials"
-    t.string   "nakaz_rektora"
-    t.string   "person_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-  end
-
   create_table "students", :force => true do |t|
     t.string   "initials"
-    t.string   "study_type"
-    t.string   "faculty_name"
-    t.string   "nakaz_rektora"
     t.integer  "person_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
