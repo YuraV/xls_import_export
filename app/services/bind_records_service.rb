@@ -34,7 +34,87 @@ class BindRecordsService
         student = Student.where(initials: e.initials).first
         e.student_id = student.id
         e.save!
+
+      end
+
+
+      RenovationStudent.scoped.each do |t|
+        student = Student.where(initials: t.initials).first
+        if student == nil
+        else
+          t.student_id = student.id
+          t.save!
+        end
+      end
+
+      EnrolledStudent.scoped.each do |en|
+        student = Student.where(initials: en.initials).first
+        if student == nil
+        else
+          en.student_id = student.id
+          en.save!
+        end
+      end
+
+      TransferStudent.scoped.each do |tr|
+        student = Student.where(initials: tr.initials).first
+        if student == nil
+        else
+          tr.student_id = student.id
+          tr.save!
+        end
+      end
+
+      RefreshCourse.scoped.each do |r|
+        student = Student.where(initials: r.initials).first
+        if student == nil
+        else
+          r.student_id = student.id
+          r.save!
+        end
+      end
+
+      Diploma.scoped.each do |d|
+        student = Student.where(initials: d.initials).first
+        if student == nil
+        else
+          d.student_id = student.id
+          d.save!
+        end
+      end
+
+      GraduatesStudent.scoped.each do |g|
+        student = Student.where(initials: g.initials).first
+        if student == nil
+        else
+          g.student_id = student.id
+          g.save!
+        end
+      end
+
+
+
+      arr = []
+      aspirant = Aspirant.select("people.*, people.id as person_id, faculty_name as faculty_name, with_separation as with_separation, code_and_name_of_the_speciality as code_and_name_of_the_speciality ").joins("JOIN people on aspirants.initials = people.initials")
+      aspirant.each {|s| arr << Aspirant.new(s.attributes.slice(*Aspirant.accessible_attributes))}
+      Aspirant.delete_all
+      Aspirant.import arr
+
+      EnrolledAspirant.scoped.each do |e|
+        aspirant = Aspirant.where(initials: e.initials).first
+        e.aspirant_id = aspirant.id
+        e.save!
+
+      end
+
+      ExclusionAspirant.scoped.each do |e|
+        aspirant = Aspirant.where(initials: e.initials).first
+        e.aspirant_id = aspirant.id
+        e.save!
+
       end
     end
   end
 end
+
+

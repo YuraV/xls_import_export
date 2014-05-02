@@ -1,0 +1,34 @@
+= render 'shared/welcome'
+%h2 Table For Diplomas
+%table#people.bordered.zebra
+  %tr
+    %th N#
+    %th Initials
+    %th faculty_name
+    %th study_type
+    %th speciality
+    %th qualification
+    %th year_of_entry
+    %th end_year
+    %th insignia
+    %th series_and_number
+    %th protocol_DEK
+    %th date
+    %th student_id
+
+  - @people.each_with_index do |person, i|
+    %tr
+      %td= person.id
+      %td= person.initials
+      %td=person.faculty_name
+      %td=person.study_type
+      %td=person.speciality
+      %td=person.qualification
+      %td=person.year_of_entry
+      %td=person.end_year
+      %td=person.insignia
+      %td=person.series_and_number
+      %td=person.protocol_DEK
+      %td=person.date
+      %td=person.student_id
+= will_paginate @people

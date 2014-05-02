@@ -3,11 +3,19 @@
 one:
   initials: MyString
   faculty_name: MyString
+  kyrs: MyString
+  renovation_reason: MyString
   study_type: MyString
+  date: MyString
   nakaz_rektora: MyString
+  student_id: 1
 
 two:
   initials: MyString
   faculty_name: MyString
+  kyrs: MyString
+  renovation_reason: MyString
   study_type: MyString
+  date: MyString
   nakaz_rektora: MyString
+  student_id: 1

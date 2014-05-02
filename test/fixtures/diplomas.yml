@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  initials: MyString
+  faculty_name: MyString
+  study_type: MyString
+  protocol_DEK: MyString
+  year_of_entry: MyString
+  end_year: MyString
+  speciality: MyString
+  qualification: MyString
+  insignia: MyString
+  series_and_number: MyString
+  date: MyString
+  student_id: 1
+
+two:
+  initials: MyString
+  faculty_name: MyString
+  study_type: MyString
+  protocol_DEK: MyString
+  year_of_entry: MyString
+  end_year: MyString
+  speciality: MyString
+  qualification: MyString
+  insignia: MyString
+  series_and_number: MyString
+  date: MyString
+  student_id: 1

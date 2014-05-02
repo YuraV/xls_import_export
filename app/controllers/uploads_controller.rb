@@ -33,6 +33,50 @@ class UploadsController < ApplicationController
                                  :per_page => 15)
   end
 
+  def renovation_student_table
+    @people = RenovationStudent.paginate(:page => params[:page],
+                                 :per_page => 15)
+  end
+  def enrolled_student_table
+    @people = EnrolledStudent.paginate(:page => params[:page],
+                                         :per_page => 15)
+  end
+  def transfer_student_table
+    @people = TransferStudent.paginate(:page => params[:page],
+                                         :per_page => 15)
+  end
+
+  def diploma_table
+    @people = Diploma.paginate(:page => params[:page],
+                                       :per_page => 15)
+  end
+
+  def graduates_student_table
+    @people = GraduatesStudent.paginate(:page => params[:page],
+                               :per_page => 15)
+  end
+
+  def refresh_course_table
+    @people = RefreshCourse.paginate(:page => params[:page],
+                                         :per_page => 15)
+  end
+
+  def aspirant_table
+    @people = Aspirant.paginate(:page => params[:page],
+                                     :per_page => 15)
+  end
+
+  def enrolled_aspirant_table
+    @people = EnrolledAspirant.paginate(:page => params[:page],
+                                     :per_page => 15)
+  end
+
+  def exclusion_aspirant_table
+    @people = ExclusionAspirant.paginate(:page => params[:page],
+                                     :per_page => 15)
+  end
+
+
   def delete_all
     ModelsService.models_delete_all
     redirect_to root_path, notice: "All Tables Have Been Cleaned"

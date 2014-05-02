@@ -1,14 +1,14 @@
 = render 'shared/welcome'
-%h2 Table For Exclusion Student
+%h2 Table For Greduates Students
 %table#people.bordered.zebra
   %tr
     %th N#
     %th Initials
     %th faculty_name
     %th study_type
-    %th kyrs
-    %th exclusion_reason
-    %th exclusion_date
+    %th speciality
+    %th qualification
+    %th nakaz_rektora
     %th student_id
 
   - @people.each_with_index do |person, i|
@@ -17,9 +17,9 @@
       %td=person.initials
       %td=person.faculty_name
       %td=person.study_type
-      %td=person.kyrs
-      %td=person.exclusion_reason
-      %td=person.exclusion_date
+      %td=person.speciality
+      %td=person.qualification
+      %td=person.nakaz_rektora
       %td=person.student_id
 = will_paginate @people
 

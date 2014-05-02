@@ -63,6 +63,15 @@ XlsImportExport::Application.routes.draw do
       get  :person_all
       get  :students_table
       get  :exclusion_table
+      get  :renovation_student_table
+      get  :refresh_course_table
+      get  :transfer_student_table
+      get  :enrolled_student_table
+      get  :diploma_table
+      get  :graduates_student_table
+      get  :aspirant_table
+      get  :enrolled_aspirant_table
+      get  :exclusion_aspirant_table
       get  :view_tables
       post :delete_all
       post :model_delete_all
@@ -79,3 +88,6 @@ XlsImportExport::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 end
+
+
+

@@ -2,6 +2,7 @@ class WelcomeController < ApplicationController
 
   def bind_records
     BindRecordsService.rake_task_execute
+    #BindRecordsService.rake_task_execute1
     redirect_to root_path
   end
 

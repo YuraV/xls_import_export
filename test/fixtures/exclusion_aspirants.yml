@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  initials: MyString
+  date: MyString
+  nakaz_rektora: MyString
+  aspirant_id: 1
+
+two:
+  initials: MyString
+  date: MyString
+  nakaz_rektora: MyString
+  aspirant_id: 1

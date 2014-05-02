@@ -11,13 +11,59 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140426232615) do
+ActiveRecord::Schema.define(:version => 20140429071753) do
 
-  create_table "enroled_students", :force => true do |t|
+  create_table "aspirants", :force => true do |t|
+    t.string   "initials"
+    t.string   "faculty_name"
+    t.boolean  "with_separation"
+    t.string   "code_and_name_of_the_speciality"
+    t.integer  "person_id"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
+
+  create_table "diplomas", :force => true do |t|
+    t.string   "initials"
+    t.string   "faculty_name"
+    t.string   "study_type"
+    t.string   "protocol_DEK"
+    t.string   "year_of_entry"
+    t.string   "end_year"
+    t.string   "speciality"
+    t.string   "qualification"
+    t.string   "insignia"
+    t.string   "series_and_number"
+    t.string   "date"
+    t.integer  "student_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  create_table "enrolled_aspirants", :force => true do |t|
+    t.string   "initials"
+    t.string   "date"
+    t.string   "nakaz_rektora"
+    t.integer  "aspirant_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "enrolled_students", :force => true do |t|
     t.string   "initials"
     t.string   "faculty_name"
     t.string   "study_type"
     t.string   "nakaz_rektora"
+    t.integer  "student_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "exclusion_aspirants", :force => true do |t|
+    t.string   "initials"
+    t.string   "date"
+    t.string   "nakaz_rektora"
+    t.integer  "aspirant_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
@@ -35,6 +81,18 @@ ActiveRecord::Schema.define(:version => 20140426232615) do
     t.datetime "updated_at",       :null => false
   end
 
+  create_table "graduates_students", :force => true do |t|
+    t.string   "initials"
+    t.string   "faculty_name"
+    t.string   "study_type"
+    t.string   "speciality"
+    t.string   "qualification"
+    t.string   "nakaz_rektora"
+    t.integer  "student_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
   create_table "people", :force => true do |t|
     t.string   "initials"
     t.string   "person_id"
@@ -42,11 +100,49 @@ ActiveRecord::Schema.define(:version => 20140426232615) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "refresh_courses", :force => true do |t|
+    t.string   "initials"
+    t.string   "faculty_name"
+    t.string   "kyrs"
+    t.string   "refresh_reason"
+    t.string   "study_type"
+    t.string   "nakaz_rektora"
+    t.integer  "student_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "renovation_students", :force => true do |t|
+    t.string   "initials"
+    t.string   "faculty_name"
+    t.string   "kyrs"
+    t.string   "renovation_reason"
+    t.string   "study_type"
+    t.string   "date"
+    t.string   "nakaz_rektora"
+    t.integer  "student_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
   create_table "students", :force => true do |t|
     t.string   "initials"
     t.integer  "person_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "faculty_name"
+  end
+
+  create_table "transfer_students", :force => true do |t|
+    t.string   "initials"
+    t.string   "faculty_name"
+    t.string   "kyrs"
+    t.string   "transfer_reason"
+    t.string   "study_type"
+    t.string   "nakaz_rektora"
+    t.integer  "student_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end

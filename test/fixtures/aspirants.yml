@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  initials: MyString
+  faculty_name: MyString
+  with_separation: false
+  code_and_name_of_the_speciality: MyString
+  person_id: 1
+
+two:
+  initials: MyString
+  faculty_name: MyString
+  with_separation: false
+  code_and_name_of_the_speciality: MyString
+  person_id: 1
