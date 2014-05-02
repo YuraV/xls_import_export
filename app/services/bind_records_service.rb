@@ -24,13 +24,18 @@ class BindRecordsService
     #   JoinTable.import arr
     # end
     def rake_task_execute
+
       arr = []
       records = []
       ModelsService.get_models.each do |model|
         arr.concat(model.constantize.all.map(&:initials))
       end
-      arr.each {|record| records  << Person.new(initials: record)}
-      Person.import records unless records.blank?
+      unless arr.blank?
+        arr.uniq!
+        arr.each {|record| records  << Person.new(initials: record)}
+        Person.import records unless records.blank?
+      end
+
 
       arr = []
       student = Student.select("people.*, people.id as person_id").joins("JOIN people on students.initials = people.initials")
@@ -134,6 +139,78 @@ class BindRecordsService
           e.save!
         end
       end
+
+
+
+
+      arr = []
+      student_ipo = StudentIpo.select("people.*, people.id as person_id, faculty_name as faculty_name, after_diploma_institute as after_diploma_institute, institute_of_qualification_improvment as institute_of_qualification_improvment, speciality as speciality ").joins("JOIN people on student_ipos.initials = people.initials")
+      student_ipo.each {|s| arr << StudentIpo.new(s.attributes.slice(*StudentIpo.accessible_attributes))}
+      if arr.blank?
+      else
+        StudentIpo.delete_all
+        StudentIpo.import arr
+      end
+
+      EnrolledStudentIpo.scoped.each do |e|
+        student_ipo = StudentIpo.where(initials: e.initials).first
+        if student_ipo.blank?
+        else
+          e.student_ipo_id = student_ipo.id
+          e.save!
+        end
+      end
+
+      ExclusionStudentIpo.scoped.each do |e|
+        student_ipo = StudentIpo.where(initials: e.initials).first
+        if student_ipo.blank?
+        else
+          e.student_ipo_id = student_ipo.id
+          e.save!
+        end
+      end
+
+
+      arr = []
+      worker_ndch = WorkerNdch.select("people.*, people.id as person_id, position_at_the_time_of_enrolment as position_at_the_time_of_enrolment, theme_which_is_included as theme_which_is_included, combining as combining, salary as salary, posadovyj_yklad as posadovyj_yklad ").joins("JOIN people on worker_ndches.initials = people.initials")
+      worker_ndch.each {|s| arr << WorkerNdch.new(s.attributes.slice(*WorkerNdch.accessible_attributes))}
+      if arr.blank?
+      else
+        WorkerNdch.delete_all
+        WorkerNdch.import arr
+      end
+
+      EnrolledWorkerNdch.scoped.each do |e|
+        worker_ndch = WorkerNdch.where(initials: e.initials).first
+        if worker_ndch.blank?
+        else
+          e.worker_dch_id = worker_ndch.id
+          e.save!
+        end
+      end
+
+      ExclusionWorkerNdch.scoped.each do |e|
+        worker_ndch = WorkerNdch.where(initials: e.initials).first
+        if worker_ndch.blank?
+        else
+          e.worker_dch_id = worker_ndch.id
+          e.save!
+        end
+      end
+
+      TransferToNewThemeWorkerNdch.scoped.each do |e|
+        worker_ndch = WorkerNdch.where(initials: e.initials).first
+        if worker_ndch.blank?
+        else
+          e.worker_dch_id = worker_ndch.id
+          e.save!
+        end
+      end
+
+
+
+
+
     end
   end
 end

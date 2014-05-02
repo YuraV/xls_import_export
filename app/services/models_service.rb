@@ -3,7 +3,7 @@ class ModelsService
     def get_models
       Rails.application.eager_load!
       models =  ActiveRecord::Base.descendants.map(&:name)
-      models.delete_if {|m| m == "Person"}
+      models
     end
 
     def populate_person
@@ -17,7 +17,8 @@ class ModelsService
     end
 
     def prepare_models_for_select
-      get_models.collect {|m| [m,m]}
+      all_models = get_models.delete_if {|m| m == "Person"}
+      all_models.collect {|m| [m,m]}
     end
 
     def models_delete_all

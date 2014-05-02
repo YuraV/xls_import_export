@@ -8,7 +8,7 @@ class UploadsController < ApplicationController
   def import
     if params[:file]
       UploaderService.upload_file(params)
-      redirect_to root_path, notice: 'Students Imported.'
+      redirect_to uploads_path, notice: "#{params[:klass]} were uploaded successfully "
     else
       redirect_to uploads_path, alert: "Please Select Some File"
     end
@@ -91,7 +91,7 @@ class UploadsController < ApplicationController
                                          :per_page => 15)
   end
   def worker_ndch_table
-    @people = EnrolledWorkerNdch.paginate(:page => params[:page],
+    @people = WorkerNdch.paginate(:page => params[:page],
                                   :per_page => 15)
   end
 

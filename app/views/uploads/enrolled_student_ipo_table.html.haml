@@ -5,12 +5,12 @@
     %th N#
     %th Initials
     %th nakaz_rektora
-    %th student_IPO_id
+    %th student_ipo_id
 
   - @people.each_with_index do |person, i|
     %tr
       %td= person.id
       %td=person.initials
       %td=person.nakaz_rektora
-      %td=person.student_IPO_id
+      %td=person.student_ipo_id
 = will_paginate @people
