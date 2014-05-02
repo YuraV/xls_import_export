@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  initial: MyString
+  person_id: 1
+  position_at_the_time_of_enrolment: MyString
+  theme_which_is_included: MyString
+  combining: MyString
+  salary: MyString
+  posadovyj_yklad: MyString
+
+two:
+  initial: MyString
+  person_id: 1
+  position_at_the_time_of_enrolment: MyString
+  theme_which_is_included: MyString
+  combining: MyString
+  salary: MyString
+  posadovyj_yklad: MyString

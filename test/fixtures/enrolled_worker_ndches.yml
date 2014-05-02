@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  initial: MyString
+  position_which_is_included: MyString
+  from_date: MyString
+  till_date: MyString
+  worker_dch_id: 1
+  nakaz_rektora: MyString
+
+two:
+  initial: MyString
+  position_which_is_included: MyString
+  from_date: MyString
+  till_date: MyString
+  worker_dch_id: 1
+  nakaz_rektora: MyString

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  initials: MyString
+  from_date: MyString
+  till_date: MyString
+  new_theme: MyString
+  new_salary: MyString
+  worker_dch_id: 1
+  nakaz_rektora: MyString
+
+two:
+  initials: MyString
+  from_date: MyString
+  till_date: MyString
+  new_theme: MyString
+  new_salary: MyString
+  worker_dch_id: 1
+  nakaz_rektora: MyString
