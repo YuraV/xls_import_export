@@ -24,6 +24,8 @@ class BindRecordsService
     #   JoinTable.import arr
     # end
     def rake_task_execute
+      UploaderService.populate_person
+
       arr = []
       student = Student.select("people.*, people.id as person_id").joins("JOIN people on students.initials = people.initials")
       student.each {|s| arr << Student.new(s.attributes.slice(*Student.accessible_attributes))}

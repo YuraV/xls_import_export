@@ -128,9 +128,8 @@ ActiveRecord::Schema.define(:version => 20140429071753) do
   create_table "students", :force => true do |t|
     t.string   "initials"
     t.integer  "person_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-    t.string   "faculty_name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "transfer_students", :force => true do |t|

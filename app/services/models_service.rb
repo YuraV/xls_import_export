@@ -6,6 +6,16 @@ class ModelsService
       models
     end
 
+    def populate_person
+      arr = []
+      records = []
+      get_models.each do |model|
+        arr << model.all.map(&:initials)
+      end
+      arr.each {|record| records  << Person.new(initials: record)}
+      Person.import records
+    end
+
     def prepare_models_for_select
       get_models.collect {|m| [m,m]}
     end
@@ -18,7 +28,7 @@ class ModelsService
       model.constantize
     end
 
-    def model_delete_all(mode)
+    def model_delete_all(model)
       model.delete_all
     end
 
