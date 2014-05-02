@@ -90,6 +90,25 @@ class UploadsController < ApplicationController
     @people = ExclusionStudentIpo.paginate(:page => params[:page],
                                          :per_page => 15)
   end
+  def worker_ndch_table
+    @people = EnrolledWorkerNdch.paginate(:page => params[:page],
+                                  :per_page => 15)
+  end
+
+  def enrolled_worker_ndch_table
+    @people = EnrolledWorkerNdch.paginate(:page => params[:page],
+                                          :per_page => 15)
+  end
+
+  def exclusion_worker_ndch_table
+    @people = ExclusionWorkerNdch.paginate(:page => params[:page],
+                                           :per_page => 15)
+  end
+
+  def transfer_to_new_theme_worker_ndch_table
+    @people = TransferToNewThemeWorkerNdch.paginate(:page => params[:page],
+                                           :per_page => 15)
+  end
 
 
   def delete_all

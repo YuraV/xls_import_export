@@ -1,16 +1,22 @@
 = render 'shared/welcome'
-%h2 Table For Exclusion Student IPO
+%h2 Table For Enrolled Worker NDCH
 %table#people.bordered.zebra
   %tr
     %th N#
     %th Initials
+    %th position_which_is_included
+    %th from_date
+    %th  till_date
     %th nakaz_rektora
-    %th student_IPO_id
+    %th worker_ndch_id
 
   - @people.each_with_index do |person, i|
     %tr
       %td= person.id
       %td=person.initials
+      %td=person.position_which_is_included
+      %td=person.from_date
+      %td=person.till_date
       %td=person.nakaz_rektora
-      %td=person.student_IPO_id
+      %td=person.worker_dch_id
 = will_paginate @people

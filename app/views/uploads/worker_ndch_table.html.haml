@@ -1,0 +1,24 @@
+= render 'shared/welcome'
+%h2 Table For Worker NDCH
+%table#people.bordered.zebra
+  %tr
+    %th N#
+    %th Initials
+    %th position_at_the_time_of_enrolment
+    %th theme_which_is_included
+    %th combining
+    %th salary
+    %th posadovyj_yklad
+    %th Person ID
+  - @people.each_with_index do |person, i|
+    %tr
+      %td= person.id
+      %td= person.initials
+      %td= person.position_at_the_time_of_enrolment
+      %td= person.theme_which_is_included
+      %td= person.combining
+      %td= person.salary
+      %td= person.posadovyj_yklad
+      %td= person.person_id
+= will_paginate @people
+
