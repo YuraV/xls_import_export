@@ -3,7 +3,7 @@ class ModelsService
     def get_models
       Rails.application.eager_load!
       models =  ActiveRecord::Base.descendants.map(&:name)
-      models
+      models.delete_if {|m| m == "Person"}
     end
 
     def populate_person
@@ -27,10 +27,5 @@ class ModelsService
     def constantize_models_name(model)
       model.constantize
     end
-
-    def model_delete_all(model)
-      model.delete_all
-    end
-
   end
 end

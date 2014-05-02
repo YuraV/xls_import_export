@@ -24,25 +24,37 @@ class BindRecordsService
     #   JoinTable.import arr
     # end
     def rake_task_execute
-      UploaderService.populate_person
+      arr = []
+      records = []
+      ModelsService.get_models.each do |model|
+        arr.concat(model.constantize.all.map(&:initials))
+      end
+      arr.each {|record| records  << Person.new(initials: record)}
+      Person.import records unless records.blank?
 
       arr = []
       student = Student.select("people.*, people.id as person_id").joins("JOIN people on students.initials = people.initials")
       student.each {|s| arr << Student.new(s.attributes.slice(*Student.accessible_attributes))}
-      Student.delete_all
-      Student.import arr
+      if arr.blank?
+      else
+        Student.delete_all
+        Student.import arr
+      end
+
 
       Exclusion.scoped.each do |e|
         student = Student.where(initials: e.initials).first
-        e.student_id = student.id
-        e.save!
-
+        if student.blank?
+        else
+          e.student_id = student.id
+          e.save!
+        end
       end
 
 
       RenovationStudent.scoped.each do |t|
         student = Student.where(initials: t.initials).first
-        if student == nil
+        if student.blank?
         else
           t.student_id = student.id
           t.save!
@@ -51,7 +63,7 @@ class BindRecordsService
 
       EnrolledStudent.scoped.each do |en|
         student = Student.where(initials: en.initials).first
-        if student == nil
+        if student.blank?
         else
           en.student_id = student.id
           en.save!
@@ -60,7 +72,7 @@ class BindRecordsService
 
       TransferStudent.scoped.each do |tr|
         student = Student.where(initials: tr.initials).first
-        if student == nil
+        if student.blank?
         else
           tr.student_id = student.id
           tr.save!
@@ -69,7 +81,7 @@ class BindRecordsService
 
       RefreshCourse.scoped.each do |r|
         student = Student.where(initials: r.initials).first
-        if student == nil
+        if student.blank?
         else
           r.student_id = student.id
           r.save!
@@ -78,7 +90,7 @@ class BindRecordsService
 
       Diploma.scoped.each do |d|
         student = Student.where(initials: d.initials).first
-        if student == nil
+        if student.blank?
         else
           d.student_id = student.id
           d.save!
@@ -87,7 +99,7 @@ class BindRecordsService
 
       GraduatesStudent.scoped.each do |g|
         student = Student.where(initials: g.initials).first
-        if student == nil
+        if student.blank?
         else
           g.student_id = student.id
           g.save!
@@ -99,21 +111,28 @@ class BindRecordsService
       arr = []
       aspirant = Aspirant.select("people.*, people.id as person_id, faculty_name as faculty_name, with_separation as with_separation, code_and_name_of_the_speciality as code_and_name_of_the_speciality ").joins("JOIN people on aspirants.initials = people.initials")
       aspirant.each {|s| arr << Aspirant.new(s.attributes.slice(*Aspirant.accessible_attributes))}
-      Aspirant.delete_all
-      Aspirant.import arr
+      if arr.blank?
+      else
+        Aspirant.delete_all
+        Aspirant.import arr
+      end
 
       EnrolledAspirant.scoped.each do |e|
         aspirant = Aspirant.where(initials: e.initials).first
-        e.aspirant_id = aspirant.id
-        e.save!
-
+        if aspirant.blank?
+        else
+          e.aspirant_id = aspirant.id
+          e.save!
+        end
       end
 
       ExclusionAspirant.scoped.each do |e|
         aspirant = Aspirant.where(initials: e.initials).first
-        e.aspirant_id = aspirant.id
-        e.save!
-
+        if aspirant.blank?
+        else
+          e.aspirant_id = aspirant.id
+          e.save!
+        end
       end
     end
   end
