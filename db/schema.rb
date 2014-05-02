@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140429071753) do
+ActiveRecord::Schema.define(:version => 20140502152746) do
 
   create_table "aspirants", :force => true do |t|
     t.string   "initials"
@@ -49,6 +49,14 @@ ActiveRecord::Schema.define(:version => 20140429071753) do
     t.datetime "updated_at",    :null => false
   end
 
+  create_table "enrolled_student_ipos", :force => true do |t|
+    t.string   "initials"
+    t.integer  "student_ipo_id"
+    t.string   "nakaz_rektora"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
   create_table "enrolled_students", :force => true do |t|
     t.string   "initials"
     t.string   "faculty_name"
@@ -59,11 +67,40 @@ ActiveRecord::Schema.define(:version => 20140429071753) do
     t.datetime "updated_at",    :null => false
   end
 
+  create_table "enrolled_worker_ndches", :force => true do |t|
+    t.string   "initials"
+    t.string   "position_which_is_included"
+    t.string   "from_date"
+    t.string   "till_date"
+    t.integer  "worker_dch_id"
+    t.string   "nakaz_rektora"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
   create_table "exclusion_aspirants", :force => true do |t|
     t.string   "initials"
     t.string   "date"
     t.string   "nakaz_rektora"
     t.integer  "aspirant_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "exclusion_student_ipos", :force => true do |t|
+    t.string   "initials"
+    t.integer  "student_ipo_id"
+    t.string   "nakaz_rektora"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "exclusion_worker_ndches", :force => true do |t|
+    t.string   "initials"
+    t.string   "reason"
+    t.string   "date"
+    t.integer  "worker_dch_id"
+    t.string   "nakaz_rektora"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
@@ -125,6 +162,17 @@ ActiveRecord::Schema.define(:version => 20140429071753) do
     t.datetime "updated_at",        :null => false
   end
 
+  create_table "student_ipos", :force => true do |t|
+    t.string   "initials"
+    t.integer  "person_id"
+    t.string   "faculty_name"
+    t.string   "after_diploma_institute"
+    t.string   "institute_of_qualification_improvment"
+    t.string   "speciality"
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
+  end
+
   create_table "students", :force => true do |t|
     t.string   "initials"
     t.integer  "person_id"
@@ -142,6 +190,30 @@ ActiveRecord::Schema.define(:version => 20140429071753) do
     t.integer  "student_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "transfer_to_new_theme_worker_ndches", :force => true do |t|
+    t.string   "initials"
+    t.string   "from_date"
+    t.string   "till_date"
+    t.string   "new_theme"
+    t.string   "new_salary"
+    t.integer  "worker_dch_id"
+    t.string   "nakaz_rektora"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "worker_ndches", :force => true do |t|
+    t.string   "initials"
+    t.integer  "person_id"
+    t.string   "position_at_the_time_of_enrolment"
+    t.string   "theme_which_is_included"
+    t.string   "combining"
+    t.string   "salary"
+    t.string   "posadovyj_yklad"
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
   end
 
 end

@@ -72,6 +72,13 @@ XlsImportExport::Application.routes.draw do
       get  :aspirant_table
       get  :enrolled_aspirant_table
       get  :exclusion_aspirant_table
+      get  :student_ipo_table
+      get  :enrolled_student_ipo_table
+      get  :exclusion_student_ipo_table
+      get  :worker_ndch_table
+      get  :enrolled_worker_ndch_table
+      get  :exclusion_worker_ndch_table
+      get  :transfer_to_new_theme_worker_ndch_table
       get  :view_tables
       post :delete_all
       post :model_delete_all

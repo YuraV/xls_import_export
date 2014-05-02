@@ -76,6 +76,21 @@ class UploadsController < ApplicationController
                                      :per_page => 15)
   end
 
+  def student_ipo_table
+    @people = StudentIpo.paginate(:page => params[:page],
+                                :per_page => 15)
+  end
+
+  def enrolled_student_ipo_table
+    @people = EnrolledStudentIpo.paginate(:page => params[:page],
+                                        :per_page => 15)
+  end
+
+  def exclusion_student_ipo_table
+    @people = ExclusionStudentIpo.paginate(:page => params[:page],
+                                         :per_page => 15)
+  end
+
 
   def delete_all
     ModelsService.models_delete_all

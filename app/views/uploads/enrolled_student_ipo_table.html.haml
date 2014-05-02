@@ -1,0 +1,16 @@
+= render 'shared/welcome'
+%h2 Table For Enrolled Aspirants
+%table#people.bordered.zebra
+  %tr
+    %th N#
+    %th Initials
+    %th nakaz_rektora
+    %th student_IPO_id
+
+  - @people.each_with_index do |person, i|
+    %tr
+      %td= person.id
+      %td=person.initials
+      %td=person.nakaz_rektora
+      %td=person.student_IPO_id
+= will_paginate @people
