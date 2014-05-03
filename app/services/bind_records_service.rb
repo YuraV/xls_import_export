@@ -210,7 +210,7 @@ class BindRecordsService
       ModelsService.get_models.each do |model|
         if model == "Person"
         else
-          table_name = model.pluralize.to_sym.downcase
+          table_name = model.tableize.to_sym
           remove_columns(table_name)
         end
       end
