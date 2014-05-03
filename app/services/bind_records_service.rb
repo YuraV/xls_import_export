@@ -1,4 +1,7 @@
 class BindRecordsService
+
+  EXCLUDED_MODELS = ["Person","Aspirant","StudentIpo", "WorkerNdch", "Student"]
+  EXCLUDED_MODELS.freeze
   class << self
     # def rake_task_execute
     #   Faculty.scoped.each do |s|
@@ -207,8 +210,10 @@ class BindRecordsService
         end
       end
 
+
+
       ModelsService.get_models.each do |model|
-        if model == "Person"
+        if EXCLUDED_MODELS.include?(model)
         else
           table_name = model.tableize.to_sym
           remove_columns(table_name)
