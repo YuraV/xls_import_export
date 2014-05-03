@@ -213,16 +213,13 @@ class BindRecordsService
 
 
       ModelsService.get_models.each do |model|
-        if EXCLUDED_MODELS.include?(model)
-        else
-          table_name = model.tableize.to_sym
-          remove_columns(table_name)
-        end
+          remove_columns(model)
       end
     end
 
-    def remove_columns(table_name)
-      ActiveRecord::Migration.remove_column table_name, :initials
+    def remove_columns(model)
+      table_name = model.tableize.to_sym
+      ActiveRecord::Migration.remove_column table_name, :initials unless EXCLUDED_MODELS.include?(model)
     end
   end
 end
