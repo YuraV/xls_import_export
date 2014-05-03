@@ -3,4 +3,5 @@ class Person < ActiveRecord::Base
   has_one :student
   has_one :aspirant
   has_one :student_ipo
+  has_one :worker_ndch
 end
