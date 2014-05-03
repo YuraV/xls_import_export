@@ -3,7 +3,6 @@
 %table#people.bordered.zebra
   %tr
     %th N#
-    %th Initials
     %th faculty_name
     %th study_type
     %th speciality
@@ -14,7 +13,6 @@
   - @people.each_with_index do |person, i|
     %tr
       %td= person.id
-      %td=person.initials
       %td=person.faculty_name
       %td=person.study_type
       %td=person.speciality

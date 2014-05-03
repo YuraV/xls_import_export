@@ -3,7 +3,6 @@
 %table#people.bordered.zebra
   %tr
     %th N#
-    %th Initials
     %th date
     %th reason
     %th nakaz_rektora
@@ -12,7 +11,6 @@
   - @people.each_with_index do |person, i|
     %tr
       %td= person.id
-      %td=person.initials
       %td=person.date
       %td=person.reason
       %td=person.nakaz_rektora

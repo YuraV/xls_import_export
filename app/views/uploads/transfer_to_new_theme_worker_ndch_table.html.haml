@@ -3,7 +3,6 @@
 %table#people.bordered.zebra
   %tr
     %th N#
-    %th Initials
     %th from_date
     %th till_date
     %th new_theme
@@ -14,7 +13,6 @@
   - @people.each_with_index do |person, i|
     %tr
       %td= person.id
-      %td= person.initials
       %td=person.from_date
       %td=person.till_date
       %td=person.new_theme
