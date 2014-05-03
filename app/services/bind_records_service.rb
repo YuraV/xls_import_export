@@ -207,10 +207,17 @@ class BindRecordsService
         end
       end
 
+      ModelsService.get_models.each do |model|
+        if model == "Person"
+        else
+          table_name = model.pluralize.to_sym.downcase
+          remove_columns(table_name)
+        end
+      end
+    end
 
-
-
-
+    def remove_columns(table_name)
+      ActiveRecord::Migration.remove_column table_name, :initials
     end
   end
 end
